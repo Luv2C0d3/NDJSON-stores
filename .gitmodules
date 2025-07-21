@@ -7,3 +7,6 @@
 [submodule "rust-NDJSON-store"]
 	path = rust-NDJSON-store
 	url = git@github.com:Luv2C0d3/rust-NDJSON-store.git
+[submodule "clojure-NDJSON-store"]
+	path = clojure-NDJSON-store
+	url = git@github.com:Luv2C0d3/clojure-NDJSON-store.git
