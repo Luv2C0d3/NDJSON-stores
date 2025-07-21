@@ -9,7 +9,6 @@
       ]
     }
   },
-  "postCreateCommand": "swift build",
   "mounts": [
     "type=bind,source=${localWorkspaceFolder},target=/root/ndjson-stores"
   ]
