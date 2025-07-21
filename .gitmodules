@@ -1,0 +1,3 @@
+[submodule "swift-NDJSON-store"]
+	path = swift-NDJSON-store
+	url = git@github.com:Luv2C0d3/swift-NDJSON-store.git
