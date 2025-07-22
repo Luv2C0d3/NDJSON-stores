@@ -10,3 +10,6 @@
 [submodule "clojure-NDJSON-store"]
 	path = clojure-NDJSON-store
 	url = git@github.com:Luv2C0d3/clojure-NDJSON-store.git
+[submodule "elixir-NDJSON-store"]
+	path = elixir-NDJSON-store
+	url = git@github.com:Luv2C0d3/elixir-NDJSON-store.git
