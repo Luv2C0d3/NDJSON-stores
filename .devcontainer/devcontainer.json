@@ -1,7 +1,12 @@
 {
   "name": "Multi-language Dev Container",
   "build": {
-    "dockerfile": "Dockerfile"
+    "dockerfile": "Dockerfile",
+    "args": {
+      "USER_UID": "1002",
+      "USER_GID": "1002",
+      "USERNAME": "devuser"
+    }
   },
   "customizations": {
     "vscode": {

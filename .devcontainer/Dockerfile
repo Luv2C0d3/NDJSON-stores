@@ -23,6 +23,27 @@ RUN curl -L -O https://github.com/clojure/brew-install/releases/latest/download/
     ./linux-install.sh && \
     rm linux-install.sh
 
+RUN apt-get update && apt-get install -y bash-completion
+
+ARG USER_UID=1000
+ARG USER_GID=1000
+ARG USERNAME=devuser
+
+RUN groupadd --gid $USER_GID $USERNAME && \
+    useradd --uid $USER_UID --gid $USER_GID -s /bin/bash --create-home $USERNAME
+
+# Copy a basic .bashrc to user's home
+COPY bashrc /home/$USERNAME/.bashrc
+RUN chown $USERNAME:$USERNAME /home/$USERNAME/.bashrc
+    
+USER $USERNAME
+WORKDIR /home/$USERNAME
+
+# Install any dependencies, e.g. Elixir Hex
+RUN mix local.hex --force && mix local.rebar --force
+
+
 # Verify installs (optional)
 #RUN swift --version && go version && elixir --version && node --version && python3 --version && rustc --version && clojure --version
 
+CMD ["bash"]
